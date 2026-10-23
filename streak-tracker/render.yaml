@@ -1,0 +1,16 @@
+# Optional Render blueprint. The persistent disk keeps your data across deploys
+# (disks need a paid instance type, e.g. starter).
+services:
+  - type: web
+    name: streak-tracker
+    runtime: node
+    plan: starter
+    buildCommand: echo "no build step"
+    startCommand: node server.js
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DB_PATH
+        value: /var/data/tracker.db
