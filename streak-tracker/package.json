@@ -1,8 +1,0 @@
-{
-  "name": "streak-tracker",
-  "version": "1.0.0",
-  "description": "Daily task tracker with a GitHub-style green heatmap",
-  "main": "server.js",
-  "scripts": { "start": "node server.js" },
-  "engines": { "node": ">=22.13" }
-}
