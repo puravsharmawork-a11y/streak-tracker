@@ -1,0 +1,12 @@
+# Render blueprint (free instance). Data is stored in an external Postgres
+# (Neon/Supabase), so no paid disk is needed. Set DATABASE_URL in the dashboard.
+services:
+  - type: web
+    name: streak-tracker
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false
